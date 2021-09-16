@@ -1,17 +1,9 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
+name: generate page
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,6 +26,10 @@ jobs:
         run: pip install markdown
         
 
-      # Runs a single command using the runners shell
       - name: generate page
         run: python page_gen.py
+        
+      - name: commit page
+        run: |
+          git commit index.html -m "Re-build page" || echo "No changes to commit"
+          git push origin master || echo "No changes to commit"
