@@ -25,6 +25,8 @@ jobs:
         
       - name: commit page
         run: |
+          git config --local user.email "tonis.hlebnikov@gmail.com"
+          git config --local user.name "Scytheface"
           git add index.html
-          git commit -m "Re-build page" || echo "No changes to commit"
-          git push origin master || echo "No changes to commit"
+          git commit -m "Re-build page"
+          git push origin master
