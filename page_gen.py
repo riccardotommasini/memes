@@ -8,7 +8,7 @@ dl_mds = [open(f"{fn}.md").read() for fn in downloadables]
 
 main_html, *dl_htmls = [markdown.markdown(md) for md in [main_md, *dl_mds]]
 
-title, *dl_titles = [md.split("\n", 1)[0][1:].strip() for md in [main_md, *dl_mds]]
+title, *dl_titles = [md.split("\n", 1)[0][2:].strip() for md in [main_md, *dl_mds]]
 
 dl_links = [re.search(r"<a.*/a>", md).group(0) for md in dl_htmls]
 
