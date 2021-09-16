@@ -1,0 +1,70 @@
+
+<HTML>
+    <HEAD>
+        <TITLE>The meme dataset</TITLE>
+        <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@300&display=swap');
+body {
+    margin: 0px;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: xxx-large;
+}
+.dl {
+    padding: 10;
+    margin: 10;
+    background-color: aliceblue;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.page {
+    width: 700px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+#dls {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+a h2 {
+    text-decoration: none;
+}
+
+        </style>
+        <script>
+        
+function navTo(anchor) {
+  document.location = document.location.toString().split('#')[0] + '#' + anchor;
+}
+
+        </script>
+    </HEAD>
+    <BODY>
+        <div class="page">
+            <h1>The meme dataset</h1>
+<p>Scraped from KnowYourMeme and enriched with Google Vision and DBPedia Spotlight - this is truly the one true semantically rich meme dataset to rule them all.</p>
+            <div id="dls">
+                <div class="dl" onclick="navTo('kym')"><h2>The original scraped data</h2><a href="https://owncloud.ut.ee/owncloud/index.php/s/g4qB5DZrFEz2XLm">Download</a></div><div class="dl" onclick="navTo('kym_spotlight')"><h2># DBPedia Spotlight enrichment</h2><a href="https://owncloud.ut.ee/owncloud/index.php/s/iMM8crN4AKSpFZZ">Download</a></div><div class="dl" onclick="navTo('kym_vision')"><h2># Google Vision enrichment</h2><a href="https://owncloud.ut.ee/owncloud/index.php/s/teoFdWKBzzqcFjY">Download</a></div>
+            </div>
+        </div>
+            <div class="page"> <a name="kym"><h1>The original scraped data</h1>
+<p>Contains the raw data from KnowYourMeme</p>
+<p><a href="https://owncloud.ut.ee/owncloud/index.php/s/g4qB5DZrFEz2XLm">Download</a></p></div><div class="page"> <a name="kym_spotlight"><h2>DBPedia Spotlight enrichment</h2>
+<p>Contains the query results after running all of the meme pages' "about" sections through DBPedia Spotlight.</p>
+<p><a href="https://owncloud.ut.ee/owncloud/index.php/s/iMM8crN4AKSpFZZ">Download</a></p></div><div class="page"> <a name="kym_vision"><h2>Google Vision enrichment</h2>
+<p>Contains the query results after running all of the meme template images through Google Vision.</p>
+<p><a href="https://owncloud.ut.ee/owncloud/index.php/s/teoFdWKBzzqcFjY">Download</a></p></div>
+    </BODY>
+</HTML>

@@ -1,0 +1,32 @@
+name: generate page
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - name: install markdown
+        run: pip install markdown
+        
+
+      - name: generate page
+        run: python page_gen.py
+        
+      - name: commit page
+        run: |
+          git config --local user.email "tonis.hlebnikov@gmail.com"
+          git config --local user.name "Scytheface"
+          git add index.html
+          git commit -m "Re-build page"
+          git push origin main
