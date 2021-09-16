@@ -29,4 +29,4 @@ jobs:
           git config --local user.name "Scytheface"
           git add index.html
           git commit -m "Re-build page"
-          git push origin master
+          git push origin main
