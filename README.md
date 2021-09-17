@@ -1,3 +1,5 @@
+# The Meme Analytics Project
+
 Memes, as originally defined by Richard Dawkins in 1976, are a "unit of
 cultural transmission, or a unit of imitation" [@Dawkins_1976]. In
 different terms, memes are concepts and customs, patterns and behaviors,
@@ -20,7 +22,7 @@ are immediately relevant:
 This provides clear limitations for quantitative study and is the basis
 of much criticism.
 
-### Internet memes
+## Internet memes
 
 Patrick Davison, in his 2012 essay *The Language of Internet Memes*,
 proposes the following definition:
@@ -41,7 +43,7 @@ This additional property now allows us to discern discrete units and
 observe the mechanisms of replication and storage in action, at least
 within the online environment - opportunity for quantitative analysis.
 
-### Image macros
+## Image macros
 
 A final level of granularity is required to reason about internet memes
 in a sufficiently precise manner. Image macros are perhaps the most
@@ -61,6 +63,6 @@ being multimodal constructions of text and image
 [@Dancygier_Vandelanotte_2017; @Zenner_Geeraerts_2018].
 
 
-# The Datasets
+## The Datasets
 
 Scraped from KnowYourMeme and enriched with Google Vision and DBPedia Spotlight - this is truly the one true semantically rich meme dataset to rule them all.
