@@ -31,6 +31,7 @@ h1 {
     background-color: aliceblue;
     border-radius: 15px;
     cursor: pointer;
+    text-align: left;
 }
 .page {
     width: 700px;
