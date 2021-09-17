@@ -1,7 +1,7 @@
 # The Meme Analytics Project
 
 Memes, as originally defined by Richard Dawkins in 1976, are a "unit of
-cultural transmission, or a unit of imitation" [@Dawkins_1976]. In
+cultural transmission, or a unit of imitation". In
 different terms, memes are concepts and customs, patterns and behaviors,
 attitudes and habits - the building blocks of culture, science,
 religion, and even society itself. It is everything that is transmitted
@@ -11,7 +11,7 @@ both being, in a sense, self-replicating entities that propagate
 themselves through people and, thus, through time.
 
 Understandably, this definition has been a source of much controversy.
-Susan Blackmoore, in her work "The Meme Machine" [@Blackmore_1999],
+Susan Blackmoore, in her work "The Meme Machine",
 identifies (and argues against) three problems with memes, of which two
 are immediately relevant:
 
@@ -29,12 +29,12 @@ proposes the following definition:
 
 
 **Definition 1** (Internet meme). a piece of culture, typically a joke,
-which gains influence through online transmission [@Davison_2012].
+which gains influence through online transmission.
 
 It is important to reinforce that humor is not a requirement, as
 internet memes have also been observed as the vehicle for political
-propaganda [@nieeburt_2021], hate speech [@kiela2021hateful] and
-traumatic confessions [@vickery_2014]. The significant part of this
+propaganda, hate speech and
+traumatic confessions. The significant part of this
 definition is *online transmission*, which requires the meme to be
 encoded into an internet viable medium. Whether this medium is an image,
 text, or video, it is readable data.
@@ -59,13 +59,11 @@ consists of:
     additional contextual information.
 
 A singular format does not exist; however, most share the property of
-being multimodal constructions of text and image
-[@Dancygier_Vandelanotte_2017; @Zenner_Geeraerts_2018].
+being multimodal constructions of text and image.
 
 
 ## The Datasets
 
-A large volume of data has been amassed, both through the initial
-scraping of KnowYourMeme.
+A large volume of data has been amassed. The data was initially scraped from KnowYourMeme.
 
-Subsequently, data have been enriche  with Google Vision and DBPedia Spotlight - this is truly the one true semantically rich meme dataset to rule them all.
+Subsequently, data have been enriched  with Google Vision and DBPedia Spotlight - this is truly the one true semantically rich meme dataset to rule them all.

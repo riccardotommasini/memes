@@ -15,8 +15,7 @@ dl_links = [re.search(r"<a.*/a>", md).group(0) for md in dl_htmls]
 CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@300&display=swap');
 body {
-    margin: 0px;
-    height:100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,8 +37,15 @@ h1 {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center
+    justify-content: center;
+    text-align: justify;
 }
+.page p, ol {
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+
+}
+
 
 #dls {
     display: flex;
