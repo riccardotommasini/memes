@@ -10,13 +10,13 @@ updated 15.05.2021
 ### Schema
 * Input text
 * ...
-* **Resources** - the detected entities
-  * URI
-  * Support
-  * Types
-  * Surface form
-  * Offset
-  * Similarity score
-  * Percentage of second rank
+* Resources - the detected entities
+    * URI
+    * Support
+    * Types
+    * Surface form
+    * Offset
+    * Similarity score
+    * Percentage of second rank
 
 [Download](https://owncloud.ut.ee/owncloud/index.php/s/iMM8crN4AKSpFZZ)
