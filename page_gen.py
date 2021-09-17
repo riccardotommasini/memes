@@ -1,10 +1,12 @@
 import markdown
 import re
+import os
 
-downloadables = ['kym', 'kym_spotlight', 'kym_vision']
+downloadables = list(filter(lambda s: s.endswith(".md") and s != "README.md", os.listdir(".")))
+dl_names = [s[:-3] for s in downloadables]
 
 main_md = open('README.md').read()
-dl_mds = [open(f"{fn}.md").read() for fn in downloadables]
+dl_mds = [open(f"{fn}").read() for fn in downloadables]
 
 main_html, *dl_htmls = [markdown.markdown(md) for md in [main_md, *dl_mds]]
 
@@ -47,11 +49,11 @@ h1 {
 
 }
 
-
 #dls {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 a h2 {
@@ -60,15 +62,15 @@ a h2 {
 """
 
 JS = """
-function navTo(anchor) {
-  document.location = document.location.toString().split('#')[0] + '#' + anchor;
+function navTo(s) {
+  window.location.href = s + ".html";
 }
 """
 
 def dl_button(i):
-    return f"<div class=\"dl\" onclick=\"navTo('{downloadables[i]}')\"><h2>{dl_titles[i]}</h2>{dl_links[i]}</div>"
+    return f"<div class=\"dl\" onclick=\"navTo('{dl_names[i]}')\"><h2>{dl_titles[i]}</h2>{dl_links[i]}</div>"
 
-HTML = f"""
+MAIN_HTML = f"""
 <HTML>
     <HEAD>
         <TITLE>{title}</TITLE>
@@ -86,9 +88,29 @@ HTML = f"""
                 {"".join(dl_button(i) for i in range(len(downloadables)))}
             </div>
         </div>
-            {"".join(f'<div class="page"> <a name="{downloadables[i]}">{dl_htmls[i]}</div>' for i in range(len(downloadables)))}
     </BODY>
 </HTML>
 """
+PAGE_HTMLS = [f"""
+<HTML>
+    <HEAD>
+        <TITLE>{dl_titles[i]}</TITLE>
+        <style>
+        {CSS}
+        </style>
+    </HEAD>
+    <BODY>
+        <div class="page">
+        <a href="index.html"><- back</a>
+            {dl_htmls[i]}
+        </div>
+    </BODY>
+</HTML>
+""" for i in range(len(downloadables))]
+
 with open('index.html', 'w', encoding='utf8') as f:
-    f.write(HTML)
+    f.write(MAIN_HTML)
+
+for i in range(len(downloadables)):
+    with open(f'{dl_names[i]}.html', 'w', encoding='utf8') as f:
+        f.write(PAGE_HTMLS[i])
