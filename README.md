@@ -65,4 +65,7 @@ being multimodal constructions of text and image
 
 ## The Datasets
 
-Scraped from KnowYourMeme and enriched with Google Vision and DBPedia Spotlight - this is truly the one true semantically rich meme dataset to rule them all.
+A large volume of data has been amassed, both through the initial
+scraping of KnowYourMeme.
+
+Subsequently, data have been enriche  with Google Vision and DBPedia Spotlight - this is truly the one true semantically rich meme dataset to rule them all.
