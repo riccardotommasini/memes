@@ -6,8 +6,7 @@
         
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@300&display=swap');
 body {
-    margin: 0px;
-    height:100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,8 +28,15 @@ h1 {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center
+    justify-content: center;
+    text-align: justify;
 }
+.page p, ol {
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+
+}
+
 
 #dls {
     display: flex;
@@ -55,7 +61,7 @@ function navTo(anchor) {
         <div class="page">
             <h1>The Meme Analytics Project</h1>
 <p>Memes, as originally defined by Richard Dawkins in 1976, are a "unit of
-cultural transmission, or a unit of imitation" [@Dawkins_1976]. In
+cultural transmission, or a unit of imitation". In
 different terms, memes are concepts and customs, patterns and behaviors,
 attitudes and habits - the building blocks of culture, science,
 religion, and even society itself. It is everything that is transmitted
@@ -64,7 +70,7 @@ Dawkins elaborates upon this further by drawing an analogy to genes -
 both being, in a sense, self-replicating entities that propagate
 themselves through people and, thus, through time.</p>
 <p>Understandably, this definition has been a source of much controversy.
-Susan Blackmoore, in her work "The Meme Machine" [@Blackmore_1999],
+Susan Blackmoore, in her work "The Meme Machine",
 identifies (and argues against) three problems with memes, of which two
 are immediately relevant:</p>
 <ol>
@@ -81,11 +87,11 @@ of much criticism.</p>
 <p>Patrick Davison, in his 2012 essay <em>The Language of Internet Memes</em>,
 proposes the following definition:</p>
 <p><strong>Definition 1</strong> (Internet meme). a piece of culture, typically a joke,
-which gains influence through online transmission [@Davison_2012].</p>
+which gains influence through online transmission.</p>
 <p>It is important to reinforce that humor is not a requirement, as
 internet memes have also been observed as the vehicle for political
-propaganda [@nieeburt_2021], hate speech [@kiela2021hateful] and
-traumatic confessions [@vickery_2014]. The significant part of this
+propaganda, hate speech and
+traumatic confessions. The significant part of this
 definition is <em>online transmission</em>, which requires the meme to be
 encoded into an internet viable medium. Whether this medium is an image,
 text, or video, it is readable data.</p>
@@ -110,12 +116,10 @@ consists of:</p>
 </li>
 </ol>
 <p>A singular format does not exist; however, most share the property of
-being multimodal constructions of text and image
-[@Dancygier_Vandelanotte_2017; @Zenner_Geeraerts_2018].</p>
+being multimodal constructions of text and image.</p>
 <h2>The Datasets</h2>
-<p>A large volume of data has been amassed, both through the initial
-scraping of KnowYourMeme.</p>
-<p>Subsequently, data have been enriche  with Google Vision and DBPedia Spotlight - this is truly the one true semantically rich meme dataset to rule them all.</p>
+<p>A large volume of data has been amassed. The data was initially scraped from KnowYourMeme.</p>
+<p>Subsequently, data have been enriched  with Google Vision and DBPedia Spotlight - this is truly the one true semantically rich meme dataset to rule them all.</p>
             <div id="dls">
                 <div class="dl" onclick="navTo('kym')"><h2>The original scraped data</h2><a href="https://owncloud.ut.ee/owncloud/index.php/s/g4qB5DZrFEz2XLm">Download</a></div><div class="dl" onclick="navTo('kym_spotlight')"><h2>DBPedia Spotlight enrichment</h2><a href="https://owncloud.ut.ee/owncloud/index.php/s/iMM8crN4AKSpFZZ">Download</a></div><div class="dl" onclick="navTo('kym_vision')"><h2>Google Vision enrichment</h2><a href="https://owncloud.ut.ee/owncloud/index.php/s/teoFdWKBzzqcFjY">Download</a></div>
             </div>
