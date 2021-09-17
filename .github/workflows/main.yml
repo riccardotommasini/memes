@@ -25,8 +25,8 @@ jobs:
         
       - name: commit page
         run: |
-          git config --local user.email "tonis.hlebnikov@gmail.com"
-          git config --local user.name "Scytheface"
+          git config --local user.email "riccardo.tommasini@polimi.it"
+          git config --local user.name "riccardotommasini"
           git add index.html
           git commit -m "Re-build page"
           git push origin main
