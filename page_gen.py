@@ -2,7 +2,7 @@ import markdown
 import re
 import os
 
-downloadables = list(filter(lambda s: s.endswith(".md") and s != "README.md", os.listdir(".")))
+downloadables = list(filter(lambda s: s.endswith(".md") and s not in {"README.md", "contributors.md"}, os.listdir(".")))
 dl_names = [s[:-3] for s in downloadables]
 
 main_md = open('README.md').read()
@@ -14,15 +14,21 @@ title, *dl_titles = [md.split("\n", 1)[0][2:].strip() for md in [main_md, *dl_md
 
 dl_links = [re.search(r"<a.*/a>", md).group(0) for md in dl_htmls]
 
+contributors = re.findall("<li>(.*?)</li>" ,markdown.markdown(open('contributors.md', encoding='utf8').read()))
 CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@300&display=swap');
 body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    margin: 0;
 }
+
+body > * {
+    margin: 0 15;
+}
+
 h1 {
     font-family: 'Roboto Slab', serif;
     font-size: xxx-large;
@@ -35,14 +41,14 @@ h1 {
     cursor: pointer;
     text-align: left;
 }
-.page {
-    width: 700px;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: justify;
+::-webkit-scrollbar {
+    width: 0;
 }
+
+.page h1 {
+    margin-top: 50px;
+}
+
 .page p, ol {
     margin-block-start: 0.3em;
     margin-block-end: 0.3em;
@@ -51,13 +57,29 @@ h1 {
 
 #dls {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 10px;
+    margin-top: 50px;
     margin-bottom: 30px;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.contributors {
+    overflow: scroll;
+    margin-top: 50;
+    padding: 10;
+    background-color: aliceblue;
+    border-radius: 15px;
+    height: fit-content;
 }
 
 a h2 {
     text-decoration: none;
+}
+.page {
+    width: 700px;
+    text-align: justify;
+    overflow: scroll;
+    padding-bottom: 100;
 }
 """
 
@@ -70,9 +92,13 @@ function navTo(s) {
 def dl_button(i):
     return f"<div class=\"dl\" onclick=\"navTo('{dl_names[i]}')\"><h2>{dl_titles[i]}</h2>{dl_links[i]}</div>"
 
+def contributor(i):
+    return f"<div class=\"contributor\"><h3>{contributors[i]}</h3></div>"
+
 MAIN_HTML = f"""
 <HTML>
     <HEAD>
+        <meta charset="UTF-8">
         <TITLE>{title}</TITLE>
         <style>
         {CSS}
@@ -82,11 +108,15 @@ MAIN_HTML = f"""
         </script>
     </HEAD>
     <BODY>
+        <div class="contributors">
+            <h2>Contributors</h2>
+            {"".join(contributor(i) for i in range(len(contributors)))}
+        </div>
         <div class="page">
             {main_html}
-            <div id="dls">
-                {"".join(dl_button(i) for i in range(len(downloadables)))}
-            </div>
+        </div>
+        <div id="dls">
+            {"".join(dl_button(i) for i in range(len(downloadables)))}
         </div>
     </BODY>
 </HTML>
