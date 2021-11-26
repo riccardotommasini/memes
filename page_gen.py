@@ -19,14 +19,20 @@ CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@300&display=swap');
 body {
     font-family: 'Roboto', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     overflow: hidden;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0;
+    height: 100%;
 }
 
 body > * {
     margin: 0 15;
+    scrollbar-width: none;
 }
 
 h1 {
@@ -50,16 +56,23 @@ h1 {
 }
 
 .page p, ol {
-    margin-block-start: 0.3em;
-    margin-block-end: 0.3em;
+    -webkit-margin-before: 0.3em;
+            margin-block-start: 0.3em;
+    -webkit-margin-after: 0.3em;
+            margin-block-end: 0.3em;
 
 }
 
 #dls {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-top: 50px;
     margin-bottom: 30px;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     overflow: scroll;
 }
 
@@ -69,6 +82,8 @@ h1 {
     padding: 10;
     background-color: aliceblue;
     border-radius: 15px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 }
 
